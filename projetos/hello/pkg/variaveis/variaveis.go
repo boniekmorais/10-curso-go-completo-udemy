@@ -37,4 +37,11 @@ func ImprimirDados() {
 	const TIPO_CARGO string = "Software Developer"
 	fmt.Println("Cargo:", TIPO_CARGO)
 
+	// Invertendo valor de variaveis sem uso de variavel auxiliar
+
+	empresa, matriz = matriz, empresa
+
+	fmt.Println("Empresa:", empresa)
+	fmt.Println("Matriz:", matriz)
+
 }
