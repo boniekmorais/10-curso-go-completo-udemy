@@ -31,4 +31,10 @@ func ImprimirDados() {
 
 	fmt.Println("Empresa:", empresa)
 	fmt.Println("Matriz:", matriz)
+
+	// Constantes
+
+	const TIPO_CARGO string = "Software Developer"
+	fmt.Println("Cargo:", TIPO_CARGO)
+
 }
