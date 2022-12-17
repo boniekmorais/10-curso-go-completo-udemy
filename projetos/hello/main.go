@@ -4,6 +4,7 @@ import (
 	"fmt"
 
 	"example.com/hello/pkg/auxiliar"
+	"example.com/hello/pkg/funcoes"
 	"example.com/hello/pkg/tipos"
 	"example.com/hello/pkg/variaveis"
 	"github.com/badoux/checkmail"
@@ -30,5 +31,51 @@ func main() {
 	variaveis.ImprimirDados()
 
 	tipos.TiposBasicos()
+
+	resultado := funcoes.Somar(10, 20)
+	fmt.Println("Soma:", resultado)
+
+	funcoes.TesteFuncao()
+
+	soma, subtracao := funcoes.CalculosMatematicos(20.0, 10.0)
+	fmt.Printf("Soma.....:\t%3.2f\n", soma)
+	fmt.Printf("Subtracao:\t%3.2f\n", subtracao)
+
+	_, subtracao2 := funcoes.CalculosMatematicos(20.0, 10.0)
+	fmt.Printf("Subtracao:\t%3.2f\n", subtracao2)
+
+	// Exemplo tabela
+	// w := tabwriter.NewWriter(os.Stdout, 1, 1, 1, ' ', 0)
+	// fmt.Fprintln(w, "a\tb\tc\td\t")
+	// fmt.Fprintln(w, "aa\tbb\tcc\t")
+	// fmt.Fprintln(w, "aaa\tbbb\tccc\t")
+	// fmt.Fprintln(w, "aaaa\tbbbb\tcccc\tdddd\t")
+	// w.Flush()
+
+	// Prints out:
+	// a    b    c    d
+	// aa   bb   cc
+	// aaa  bbb  ccc
+	// aaaa bbbb cccc dddd
+
+	// Exemplo table:
+
+	// table.DefaultHeaderFormatter = func(format string, vals ...interface{}) string {
+	// return strings.ToUpper(fmt.Sprintf(format, vals...))
+	//   }
+
+	//   tbl := table.New("ID", "Name", "Cost ($)")
+
+	//   for _, widget := range Widgets {
+	// tbl.AddRow(widget.ID, widget.Name, widget.Cost)
+	//   }
+
+	//   tbl.Print()
+
+	// Output:
+	// ID  NAME      COST ($)
+	// 1   Foobar    1.23
+	// 2   Fizzbuzz  4.56
+	// 3   Gizmo     78.90
 
 }
