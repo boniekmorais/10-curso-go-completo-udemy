@@ -4,6 +4,7 @@ import (
 	"fmt"
 
 	"example.com/hello/pkg/auxiliar"
+	"example.com/hello/pkg/tipos"
 	"example.com/hello/pkg/variaveis"
 	"github.com/badoux/checkmail"
 )
@@ -27,5 +28,7 @@ func main() {
 	fmt.Println("Endereço:", endereco)
 
 	variaveis.ImprimirDados()
+
+	tipos.TiposBasicos()
 
 }
