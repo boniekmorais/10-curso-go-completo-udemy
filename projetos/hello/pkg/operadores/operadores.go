@@ -51,4 +51,6 @@ func Operadores() {
 	numero--
 	fmt.Println(numero)
 
+	// Nao existe operadores pre-fixados em Go "--numero" por exemplo.
+
 }
