@@ -5,6 +5,7 @@ import (
 
 	"example.com/hello/pkg/auxiliar"
 	"example.com/hello/pkg/funcoes"
+	"example.com/hello/pkg/operadores"
 	"example.com/hello/pkg/tipos"
 	"example.com/hello/pkg/variaveis"
 	"github.com/badoux/checkmail"
@@ -43,6 +44,8 @@ func main() {
 
 	_, subtracao2 := funcoes.CalculosMatematicos(20.0, 10.0)
 	fmt.Printf("Subtracao:\t%3.2f\n", subtracao2)
+
+	operadores.Operadores()
 
 	// Exemplo tabela
 	// w := tabwriter.NewWriter(os.Stdout, 1, 1, 1, ' ', 0)
