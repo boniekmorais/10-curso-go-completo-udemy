@@ -53,4 +53,7 @@ func Operadores() {
 
 	// Nao existe operadores pre-fixados em Go "--numero" por exemplo.
 
+	// Operadores ternarios
+	// var resultado2 int = verdadeiro ? 10 : 20 // GO nao aceita operador ternario.
+
 }
