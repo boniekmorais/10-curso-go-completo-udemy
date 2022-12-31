@@ -7,6 +7,7 @@ import (
 	"example.com/hello/pkg/funcoes"
 	"example.com/hello/pkg/heranca"
 	"example.com/hello/pkg/operadores"
+	"example.com/hello/pkg/ponteiros"
 	"example.com/hello/pkg/structs"
 	"example.com/hello/pkg/tipos"
 	"example.com/hello/pkg/variaveis"
@@ -48,9 +49,9 @@ func main() {
 	fmt.Printf("Subtracao:\t%3.2f\n", subtracao2)
 
 	operadores.Operadores()
-
 	structs.Structs()
 	heranca.Heranca()
+	ponteiros.Ponteiros()
 
 	// Exemplo tabela
 	// w := tabwriter.NewWriter(os.Stdout, 1, 1, 1, ' ', 0)
