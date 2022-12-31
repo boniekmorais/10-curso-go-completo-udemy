@@ -5,8 +5,14 @@ import (
 )
 
 type usuario struct {
-	nome  string
-	idade uint8
+	nome     string
+	idade    uint8
+	endereco endereco
+}
+
+type endereco struct {
+	logradouro string
+	numero     uint8
 }
 
 func Structs() {
@@ -25,7 +31,9 @@ func Structs() {
 	fmt.Println(usuario1)
 	fmt.Println(usuario2)
 
-	usuario3 := usuario{"Barbara", 23}
+	enderecoExemplo := endereco{"Rua Onze", 20}
+
+	usuario3 := usuario{"Barbara", 23, enderecoExemplo}
 	fmt.Println(usuario3)
 
 	usuario4 := usuario{nome: "Carlos"}
