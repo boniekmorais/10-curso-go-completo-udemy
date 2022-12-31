@@ -5,6 +5,7 @@ import (
 
 	"example.com/hello/pkg/auxiliar"
 	"example.com/hello/pkg/funcoes"
+	"example.com/hello/pkg/heranca"
 	"example.com/hello/pkg/operadores"
 	"example.com/hello/pkg/structs"
 	"example.com/hello/pkg/tipos"
@@ -49,6 +50,7 @@ func main() {
 	operadores.Operadores()
 
 	structs.Structs()
+	heranca.Heranca()
 
 	// Exemplo tabela
 	// w := tabwriter.NewWriter(os.Stdout, 1, 1, 1, ' ', 0)
