@@ -7,6 +7,7 @@ import (
 	"example.com/hello/pkg/auxiliar"
 	"example.com/hello/pkg/funcoes"
 	"example.com/hello/pkg/heranca"
+	"example.com/hello/pkg/maps"
 	"example.com/hello/pkg/operadores"
 	"example.com/hello/pkg/ponteiros"
 	"example.com/hello/pkg/structs"
@@ -54,6 +55,7 @@ func main() {
 	heranca.Heranca()
 	ponteiros.Ponteiros()
 	arraysslices.ArraysSlices()
+	maps.Maps()
 
 	// Exemplo tabela
 	// w := tabwriter.NewWriter(os.Stdout, 1, 1, 1, ' ', 0)
