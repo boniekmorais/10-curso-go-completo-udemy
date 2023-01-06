@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 
+	arraysslices "example.com/hello/pkg/arrays-slices"
 	"example.com/hello/pkg/auxiliar"
 	"example.com/hello/pkg/funcoes"
 	"example.com/hello/pkg/heranca"
@@ -52,6 +53,7 @@ func main() {
 	structs.Structs()
 	heranca.Heranca()
 	ponteiros.Ponteiros()
+	arraysslices.ArraysSlices()
 
 	// Exemplo tabela
 	// w := tabwriter.NewWriter(os.Stdout, 1, 1, 1, ' ', 0)
