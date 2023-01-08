@@ -5,6 +5,7 @@ import (
 
 	arraysslices "example.com/hello/pkg/arrays-slices"
 	"example.com/hello/pkg/auxiliar"
+	"example.com/hello/pkg/controle"
 	"example.com/hello/pkg/funcoes"
 	"example.com/hello/pkg/heranca"
 	"example.com/hello/pkg/maps"
@@ -56,6 +57,7 @@ func main() {
 	ponteiros.Ponteiros()
 	arraysslices.ArraysSlices()
 	maps.Maps()
+	controle.Controle()
 
 	// Exemplo tabela
 	// w := tabwriter.NewWriter(os.Stdout, 1, 1, 1, ' ', 0)
