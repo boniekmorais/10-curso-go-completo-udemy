@@ -59,6 +59,18 @@ func main() {
 	maps.Maps()
 	controle.Controle()
 
+	somaNovo, subtracaoNovo := funcoes.CalculosMatematicos2(10, 20)
+
+	fmt.Println(somaNovo)
+	fmt.Println(subtracaoNovo)
+
+	total := funcoes.CalculosMatematicos3(10, 20, 30)
+
+	fmt.Println(total)
+
+	funcoes.ExemploFuncaoAnonima()
+	funcoes.ExemploFuncaoRecursiva()
+
 	// Exemplo tabela
 	// w := tabwriter.NewWriter(os.Stdout, 1, 1, 1, ' ', 0)
 	// fmt.Fprintln(w, "a\tb\tc\td\t")
