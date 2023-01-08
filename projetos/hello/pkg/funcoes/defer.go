@@ -23,9 +23,5 @@ func alunoAprovado(n1, n2 float32) bool {
 
 	media := (n1 + n2) / 2
 
-	if media >= 6 {
-		return true
-	}
-
-	return false
+	return media >= 6
 }
