@@ -70,6 +70,7 @@ func main() {
 
 	funcoes.ExemploFuncaoAnonima()
 	funcoes.ExemploFuncaoRecursiva()
+	funcoes.ExemploDefer()
 
 	// Exemplo tabela
 	// w := tabwriter.NewWriter(os.Stdout, 1, 1, 1, ' ', 0)
