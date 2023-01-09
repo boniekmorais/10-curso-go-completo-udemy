@@ -9,6 +9,7 @@ import (
 	"example.com/hello/pkg/controle"
 	"example.com/hello/pkg/funcoes"
 	"example.com/hello/pkg/heranca"
+	"example.com/hello/pkg/interfaces"
 	"example.com/hello/pkg/maps"
 	"example.com/hello/pkg/metodos"
 	"example.com/hello/pkg/operadores"
@@ -88,6 +89,8 @@ func main() {
 	funcoes.ExemploFuncaoComPonteiros()
 
 	metodos.ExemploMetodos()
+	interfaces.ExemploInterfaces()
+	interfaces.ExemploTipoGenerico()
 
 	// Exemplo tabela
 	// w := tabwriter.NewWriter(os.Stdout, 1, 1, 1, ' ', 0)
