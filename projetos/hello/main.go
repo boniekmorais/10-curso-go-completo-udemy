@@ -73,6 +73,7 @@ func main() {
 	funcoes.ExemploDefer()
 	funcoes.ExemploPanicRecover()
 	funcoes.ExemploClosure()
+	funcoes.ExemploFuncaoComPonteiros()
 
 	// Exemplo tabela
 	// w := tabwriter.NewWriter(os.Stdout, 1, 1, 1, ' ', 0)
