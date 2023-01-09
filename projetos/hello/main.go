@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"time"
 
 	arraysslices "example.com/hello/pkg/arrays-slices"
 	"example.com/hello/pkg/auxiliar"
@@ -19,6 +20,16 @@ import (
 
 // Funcao iniciada com letra maiuscula pode ser exportada para outros pacotes.
 // Funcao iniciada com letra minuscula somente visivel dentro do pacote.
+
+// Função init é executada antes da função main.
+// Pode ter uma função por arquivo.
+
+func init() {
+	fmt.Println("Executando a função init")
+	for i := 0; i < 3; i++ {
+		time.Sleep(time.Second)
+	}
+}
 
 func main() {
 	fmt.Println("Hello there!")
