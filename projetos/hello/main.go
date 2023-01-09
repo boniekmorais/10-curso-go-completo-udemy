@@ -10,6 +10,7 @@ import (
 	"example.com/hello/pkg/funcoes"
 	"example.com/hello/pkg/heranca"
 	"example.com/hello/pkg/maps"
+	"example.com/hello/pkg/metodos"
 	"example.com/hello/pkg/operadores"
 	"example.com/hello/pkg/ponteiros"
 	"example.com/hello/pkg/structs"
@@ -85,6 +86,8 @@ func main() {
 	funcoes.ExemploPanicRecover()
 	funcoes.ExemploClosure()
 	funcoes.ExemploFuncaoComPonteiros()
+
+	metodos.ExemploMetodos()
 
 	// Exemplo tabela
 	// w := tabwriter.NewWriter(os.Stdout, 1, 1, 1, ' ', 0)
