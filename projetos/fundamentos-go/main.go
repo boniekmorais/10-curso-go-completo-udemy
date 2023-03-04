@@ -6,6 +6,7 @@ import (
 
 	arraysslices "example.com/fundamentos-go/pkg/arrays-slices"
 	"example.com/fundamentos-go/pkg/auxiliar"
+	"example.com/fundamentos-go/pkg/channels"
 	"example.com/fundamentos-go/pkg/controle"
 	"example.com/fundamentos-go/pkg/funcoes"
 	"example.com/fundamentos-go/pkg/heranca"
@@ -96,6 +97,8 @@ func main() {
 	// goroutines.GoRoutines()
 
 	waitgroup.Waitgroup()
+
+	channels.Channels()
 
 	// Exemplo tabela
 	// w := tabwriter.NewWriter(os.Stdout, 1, 1, 1, ' ', 0)
