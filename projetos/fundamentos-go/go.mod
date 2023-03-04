@@ -1,4 +1,4 @@
-module example.com/hello
+module example.com/fundamentos-go
 
 go 1.19
 

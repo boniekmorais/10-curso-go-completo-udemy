@@ -4,19 +4,20 @@ import (
 	"fmt"
 	"time"
 
-	arraysslices "example.com/hello/pkg/arrays-slices"
-	"example.com/hello/pkg/auxiliar"
-	"example.com/hello/pkg/controle"
-	"example.com/hello/pkg/funcoes"
-	"example.com/hello/pkg/heranca"
-	"example.com/hello/pkg/interfaces"
-	"example.com/hello/pkg/maps"
-	"example.com/hello/pkg/metodos"
-	"example.com/hello/pkg/operadores"
-	"example.com/hello/pkg/ponteiros"
-	"example.com/hello/pkg/structs"
-	"example.com/hello/pkg/tipos"
-	"example.com/hello/pkg/variaveis"
+	arraysslices "example.com/fundamentos-go/pkg/arrays-slices"
+	"example.com/fundamentos-go/pkg/auxiliar"
+	"example.com/fundamentos-go/pkg/controle"
+	"example.com/fundamentos-go/pkg/funcoes"
+	"example.com/fundamentos-go/pkg/goroutines"
+	"example.com/fundamentos-go/pkg/heranca"
+	"example.com/fundamentos-go/pkg/interfaces"
+	"example.com/fundamentos-go/pkg/maps"
+	"example.com/fundamentos-go/pkg/metodos"
+	"example.com/fundamentos-go/pkg/operadores"
+	"example.com/fundamentos-go/pkg/ponteiros"
+	"example.com/fundamentos-go/pkg/structs"
+	"example.com/fundamentos-go/pkg/tipos"
+	"example.com/fundamentos-go/pkg/variaveis"
 	"github.com/badoux/checkmail"
 )
 
@@ -91,6 +92,8 @@ func main() {
 	metodos.ExemploMetodos()
 	interfaces.ExemploInterfaces()
 	interfaces.ExemploTipoGenerico()
+
+	goroutines.GoRoutines()
 
 	// Exemplo tabela
 	// w := tabwriter.NewWriter(os.Stdout, 1, 1, 1, ' ', 0)
