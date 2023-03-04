@@ -8,7 +8,6 @@ import (
 	"example.com/fundamentos-go/pkg/auxiliar"
 	"example.com/fundamentos-go/pkg/controle"
 	"example.com/fundamentos-go/pkg/funcoes"
-	"example.com/fundamentos-go/pkg/goroutines"
 	"example.com/fundamentos-go/pkg/heranca"
 	"example.com/fundamentos-go/pkg/interfaces"
 	"example.com/fundamentos-go/pkg/maps"
@@ -18,6 +17,7 @@ import (
 	"example.com/fundamentos-go/pkg/structs"
 	"example.com/fundamentos-go/pkg/tipos"
 	"example.com/fundamentos-go/pkg/variaveis"
+	"example.com/fundamentos-go/pkg/waitgroup"
 	"github.com/badoux/checkmail"
 )
 
@@ -93,7 +93,9 @@ func main() {
 	interfaces.ExemploInterfaces()
 	interfaces.ExemploTipoGenerico()
 
-	goroutines.GoRoutines()
+	// goroutines.GoRoutines()
+
+	waitgroup.Waitgroup()
 
 	// Exemplo tabela
 	// w := tabwriter.NewWriter(os.Stdout, 1, 1, 1, ' ', 0)
