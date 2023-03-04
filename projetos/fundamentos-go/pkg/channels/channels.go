@@ -16,13 +16,19 @@ func Channels() {
 
 	fmt.Println("Depois da execução da função escrever.")
 
-	for {
-		mensagem, aberto := <-canal // Canal aguardando receber o valor.
+	// for {
+	// 	mensagem, aberto := <-canal // Canal aguardando receber o valor.
 
-		if !aberto {
-			break
-		}
+	// 	if !aberto {
+	// 		break
+	// 	}
 
+	// 	fmt.Println(mensagem)
+	// }
+
+	// Outra forma de manipular mensagens recebidas pelo canal.
+
+	for mensagem := range canal {
 		fmt.Println(mensagem)
 	}
 
