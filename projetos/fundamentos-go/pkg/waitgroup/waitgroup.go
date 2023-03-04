@@ -6,6 +6,8 @@ import (
 	"time"
 )
 
+// Waitgroup é usado para sincronizar duas ou mais Go Routines.
+
 func Waitgroup() {
 
 	fmt.Println("Waitgroup")
