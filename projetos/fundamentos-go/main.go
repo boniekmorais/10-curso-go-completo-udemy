@@ -6,7 +6,7 @@ import (
 
 	arraysslices "example.com/fundamentos-go/pkg/arrays-slices"
 	"example.com/fundamentos-go/pkg/auxiliar"
-	"example.com/fundamentos-go/pkg/channels"
+	channelsbuffer "example.com/fundamentos-go/pkg/channels-buffer"
 	"example.com/fundamentos-go/pkg/controle"
 	"example.com/fundamentos-go/pkg/funcoes"
 	"example.com/fundamentos-go/pkg/heranca"
@@ -18,7 +18,6 @@ import (
 	"example.com/fundamentos-go/pkg/structs"
 	"example.com/fundamentos-go/pkg/tipos"
 	"example.com/fundamentos-go/pkg/variaveis"
-	"example.com/fundamentos-go/pkg/waitgroup"
 	"github.com/badoux/checkmail"
 )
 
@@ -96,9 +95,11 @@ func main() {
 
 	// goroutines.GoRoutines()
 
-	waitgroup.Waitgroup()
+	// waitgroup.Waitgroup()
 
-	channels.Channels()
+	// channels.Channels()
+
+	channelsbuffer.ChannelsBuffer()
 
 	// Exemplo tabela
 	// w := tabwriter.NewWriter(os.Stdout, 1, 1, 1, ' ', 0)
