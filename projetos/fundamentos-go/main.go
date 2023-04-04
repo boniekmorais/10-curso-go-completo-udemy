@@ -104,7 +104,9 @@ func main() {
 
 	// funcoes.ExemploFuncaoRecursiva()
 
-	concorrencia.ExemploWorkerPools()
+	// concorrencia.ExemploWorkerPools()
+
+	concorrencia.ExemploGenerator()
 
 	// Exemplo tabela
 	// w := tabwriter.NewWriter(os.Stdout, 1, 1, 1, ' ', 0)
