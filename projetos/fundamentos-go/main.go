@@ -106,7 +106,9 @@ func main() {
 
 	// concorrencia.ExemploWorkerPools()
 
-	concorrencia.ExemploGenerator()
+	// concorrencia.ExemploGenerator()
+
+	concorrencia.ExemploMultiplexador()
 
 	// Exemplo tabela
 	// w := tabwriter.NewWriter(os.Stdout, 1, 1, 1, ' ', 0)
