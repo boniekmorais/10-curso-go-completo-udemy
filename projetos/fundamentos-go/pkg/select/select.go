@@ -5,7 +5,7 @@ import (
 	"time"
 )
 
-func SelectTest() {
+func ExemploSelect() {
 	canal1 := make(chan string)
 	canal2 := make(chan string)
 

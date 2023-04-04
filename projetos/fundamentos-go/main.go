@@ -6,6 +6,7 @@ import (
 
 	arraysslices "example.com/fundamentos-go/pkg/arrays-slices"
 	"example.com/fundamentos-go/pkg/auxiliar"
+	"example.com/fundamentos-go/pkg/concorrencia"
 	"example.com/fundamentos-go/pkg/controle"
 	"example.com/fundamentos-go/pkg/funcoes"
 	"example.com/fundamentos-go/pkg/heranca"
@@ -14,7 +15,6 @@ import (
 	"example.com/fundamentos-go/pkg/metodos"
 	"example.com/fundamentos-go/pkg/operadores"
 	"example.com/fundamentos-go/pkg/ponteiros"
-	selectteste "example.com/fundamentos-go/pkg/select"
 	"example.com/fundamentos-go/pkg/structs"
 	"example.com/fundamentos-go/pkg/tipos"
 	"example.com/fundamentos-go/pkg/variaveis"
@@ -83,7 +83,6 @@ func main() {
 	fmt.Println(total)
 
 	funcoes.ExemploFuncaoAnonima()
-	funcoes.ExemploFuncaoRecursiva()
 	funcoes.ExemploDefer()
 	funcoes.ExemploPanicRecover()
 	funcoes.ExemploClosure()
@@ -101,7 +100,11 @@ func main() {
 
 	// channelsbuffer.ChannelsBuffer()
 
-	selectteste.SelectTest()
+	// selectteste.ExemploSelect()
+
+	// funcoes.ExemploFuncaoRecursiva()
+
+	concorrencia.ExemploWorkerPools()
 
 	// Exemplo tabela
 	// w := tabwriter.NewWriter(os.Stdout, 1, 1, 1, ' ', 0)
