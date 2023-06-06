@@ -8,5 +8,6 @@ import (
 
 func main() {
 	fmt.Println("Main Function")
-	funcoesjson.ExemploJson()
+	funcoesjson.ExemploJsonMarshal()
+	funcoesjson.ExemploJsonUnmarshal()
 }
