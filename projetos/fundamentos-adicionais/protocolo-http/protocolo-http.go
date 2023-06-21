@@ -8,6 +8,11 @@ import (
 
 var templates *template.Template
 
+type usuario struct {
+	Nome  string
+	Email string
+}
+
 func ServidorHttp() {
 
 	templates = template.Must(template.ParseGlob("*.html"))
@@ -21,7 +26,13 @@ func ServidorHttp() {
 	// })
 
 	http.HandleFunc("/home", func(w http.ResponseWriter, r *http.Request) {
-		templates.ExecuteTemplate(w, "home.html", nil)
+
+		u := usuario{
+			"João",
+			"joao@gmail.com",
+		}
+
+		templates.ExecuteTemplate(w, "home.html", u)
 	})
 
 	log.Fatal(http.ListenAndServe(":5001", nil))
