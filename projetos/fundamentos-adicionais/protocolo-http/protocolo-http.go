@@ -17,14 +17,6 @@ func ServidorHttp() {
 
 	templates = template.Must(template.ParseGlob("*.html"))
 
-	// http.HandleFunc("/home", func(w http.ResponseWriter, r *http.Request) {
-	// 	w.Write([]byte("Olá Mundo!"))
-	// })
-
-	// http.HandleFunc("/usuarios", func(w http.ResponseWriter, r *http.Request) {
-	// 	w.Write([]byte("Olá usuários!"))
-	// })
-
 	http.HandleFunc("/home", func(w http.ResponseWriter, r *http.Request) {
 
 		u := usuario{
