@@ -15,5 +15,15 @@
         <h2 style="color: #16b6c2; font-family: Arial, Helvetica, sans-serif;">Página Home</h2>
         <h4>Usuário: {{.Nome}} </h4>
         <h4>E-mail: {{.Email}}</h4>
+        
+        <button id="botao1">Clique aqui!</button>
+        
+        <script>
+            var botao = document.getElementById("botao1");
+        
+            botao.onclick = function() {
+                alert("Botão clicado com sucesso");
+            }
+        </script>
     </body>
 </html>
