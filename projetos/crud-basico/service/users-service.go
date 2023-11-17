@@ -5,6 +5,8 @@ import (
 	"fmt"
 	"io"
 	"net/http"
+
+	"example.com/crud-basico/database"
 )
 
 type user struct {
@@ -30,5 +32,38 @@ func CreateUser(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	fmt.Println(userToCreate)
+	db, error := database.Connect()
+
+	if error != nil {
+		w.Write([]byte("Error on connecting to database"))
+		return
+	}
+
+	defer db.Close()
+
+	statement, error := db.Prepare("INSERT INTO usuarios (nome, email) VALUES (?, ?)")
+
+	if error != nil {
+		w.Write([]byte("Error on creating statement"))
+		return
+	}
+
+	defer statement.Close()
+
+	result, error := statement.Exec(userToCreate.Nome, userToCreate.Email)
+
+	if error != nil {
+		w.Write([]byte("Error on saving user"))
+		return
+	}
+
+	idSaved, error := result.LastInsertId()
+
+	if error != nil {
+		w.Write([]byte("Error on getting ID"))
+		return
+	}
+
+	w.WriteHeader(http.StatusCreated)
+	w.Write([]byte(fmt.Sprintf("User saved with successful. ID: %d", idSaved)))
 }
