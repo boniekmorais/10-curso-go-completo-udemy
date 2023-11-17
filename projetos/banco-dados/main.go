@@ -19,5 +19,21 @@ func main() {
 		log.Fatal(error)
 	}
 
-	fmt.Println(db)
+	defer db.Close()
+
+	if error = db.Ping(); error != nil {
+		log.Fatal(error)
+	}
+
+	fmt.Println("Conectado com o banco de dados")
+
+	records, error := db.Query("SELECT * FROM usuarios")
+
+	if error != nil {
+		log.Fatal(error)
+	}
+
+	defer records.Close()
+
+	fmt.Println(records)
 }
