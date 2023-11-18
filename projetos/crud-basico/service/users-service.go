@@ -67,3 +67,61 @@ func CreateUser(w http.ResponseWriter, r *http.Request) {
 	w.WriteHeader(http.StatusCreated)
 	w.Write([]byte(fmt.Sprintf("User saved with successful. ID: %d", idSaved)))
 }
+
+// Get All Users
+func ListUsers(w http.ResponseWriter, r *http.Request) {
+
+	db, error := database.Connect()
+
+	if error != nil {
+		w.Write([]byte("Error on connecting to database"))
+		return
+	}
+
+	defer db.Close()
+
+	result, error := db.Query("SELECT * FROM usuarios")
+
+	if error != nil {
+		w.Write([]byte("Error on selecting users"))
+		return
+	}
+
+	defer result.Close()
+
+	var userList []user
+
+	for result.Next() {
+
+		var user user
+
+		if error := result.Scan(&user.ID, &user.Nome, &user.Email); error != nil {
+			w.Write([]byte("Error on getting user data"))
+			return
+		}
+
+		userList = append(userList, user)
+	}
+
+	w.Header().Set("Content-Type", "application/json")
+	w.WriteHeader(http.StatusOK)
+
+	if error := json.NewEncoder(w).Encode(userList); error != nil {
+		w.Write([]byte("Error on converting users list to JSON"))
+		return
+	}
+
+	// enc := json.NewEncoder(w)
+	// enc.SetIndent("", "    ")
+
+	// if error := enc.Encode(userList); error != nil {
+	// 	w.Write([]byte("Error on converting users list to JSON"))
+	// 	return
+	// }
+
+}
+
+// Get One User By Id
+func GetUserById(w http.ResponseWriter, r *http.Request) {
+
+}
