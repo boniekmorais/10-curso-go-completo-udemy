@@ -5,8 +5,10 @@ import (
 	"fmt"
 	"io"
 	"net/http"
+	"strconv"
 
 	"example.com/crud-basico/database"
+	"github.com/gorilla/mux"
 )
 
 type user struct {
@@ -123,5 +125,52 @@ func ListUsers(w http.ResponseWriter, r *http.Request) {
 
 // Get One User By Id
 func GetUserById(w http.ResponseWriter, r *http.Request) {
+
+	parameters := mux.Vars(r)
+	ID, error := strconv.ParseUint(parameters["id"], 10, 32) // Nome do parametro, base decimal, tamanho em bits
+
+	if error != nil {
+		w.Write([]byte("Error on converting parameter to integer"))
+	}
+
+	db, error := database.Connect()
+
+	if error != nil {
+		w.Write([]byte("Error on connecting to database"))
+		return
+	}
+
+	defer db.Close()
+
+	result, error := db.Query("SELECT * FROM usuarios WHERE id = ?", ID)
+
+	if error != nil {
+		w.Write([]byte("Error on selecting users"))
+		return
+	}
+
+	if error != nil {
+		w.Write([]byte("Error on selecting user"))
+		return
+	}
+
+	defer result.Close()
+
+	var user user
+
+	if result.Next() {
+		if error := result.Scan(&user.ID, &user.Nome, &user.Email); error != nil {
+			w.Write([]byte("Error on getting user data"))
+			return
+		}
+	}
+
+	w.Header().Set("Content-Type", "application/json")
+	w.WriteHeader(http.StatusOK)
+
+	if error := json.NewEncoder(w).Encode(user); error != nil {
+		w.Write([]byte("Error on converting user to JSON"))
+		return
+	}
 
 }
