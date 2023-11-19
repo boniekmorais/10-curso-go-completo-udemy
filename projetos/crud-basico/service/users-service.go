@@ -222,3 +222,42 @@ func UpdateUserById(w http.ResponseWriter, r *http.Request) {
 	w.WriteHeader(http.StatusNoContent)
 
 }
+
+// Delete User
+func DeleteUserById(w http.ResponseWriter, r *http.Request) {
+
+	parameters := mux.Vars(r)
+
+	ID, error := strconv.ParseUint(parameters["id"], 10, 32)
+
+	if error != nil {
+		w.Write([]byte("Error on converting parameter to integer"))
+	}
+
+	db, error := database.Connect()
+
+	if error != nil {
+		w.Write([]byte("Error on connecting to database"))
+		return
+	}
+
+	defer db.Close()
+
+	statement, error := db.Prepare("DELETE FROM usuarios WHERE id = ?")
+
+	if error != nil {
+		w.Write([]byte("Error on creating statement"))
+		return
+	}
+
+	defer statement.Close()
+
+	if _, error := statement.Exec(ID); error != nil {
+		w.Write([]byte("Error on deleting user"))
+		return
+	}
+
+	w.Header().Set("Content-Type", "application/json")
+	w.WriteHeader(http.StatusNoContent)
+
+}

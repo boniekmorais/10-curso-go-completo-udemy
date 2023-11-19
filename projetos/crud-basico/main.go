@@ -17,6 +17,7 @@ func main() {
 	router.HandleFunc("/users", userService.ListUsers).Methods(http.MethodGet)
 	router.HandleFunc("/users/{id}", userService.GetUserById).Methods(http.MethodGet)
 	router.HandleFunc("/users/{id}", userService.UpdateUserById).Methods(http.MethodPut)
+	router.HandleFunc("/users/{id}", userService.DeleteUserById).Methods(http.MethodDelete)
 
 	fmt.Println("Starting web server on port 3000")
 	log.Fatal(http.ListenAndServe(":3000", router))
