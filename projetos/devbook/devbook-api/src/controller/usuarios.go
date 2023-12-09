@@ -27,6 +27,11 @@ func CriarUsuario(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
+	if erro := usuario.Preparar(); erro != nil {
+		responses.Erro(w, http.StatusBadRequest, erro)
+		return
+	}
+
 	db, error := database.Conectar()
 
 	if error != nil {
