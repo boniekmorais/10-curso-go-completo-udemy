@@ -8,6 +8,7 @@ import (
 	"encoding/json"
 	"io"
 	"net/http"
+	"strings"
 )
 
 // Criar usuário.
@@ -55,7 +56,29 @@ func CriarUsuario(w http.ResponseWriter, r *http.Request) {
 
 // Listar todos os usuários.
 func ListarUsuarios(w http.ResponseWriter, r *http.Request) {
-	w.Write([]byte("Listar usuários"))
+
+	usuario := strings.ToLower(r.URL.Query().Get("usuario"))
+
+	db, erro := database.Conectar()
+
+	if erro != nil {
+		responses.Erro(w, http.StatusInternalServerError, erro)
+		return
+	}
+
+	defer db.Close()
+
+	usuarioRepository := repository.NovoRepositorioUsuarios(db)
+
+	usuarios, erro := usuarioRepository.Pesquisar(usuario)
+
+	if erro != nil {
+		responses.Erro(w, http.StatusInternalServerError, erro)
+		return
+	}
+
+	responses.JSON(w, http.StatusOK, usuarios)
+
 }
 
 // Listar usuário por ID.
